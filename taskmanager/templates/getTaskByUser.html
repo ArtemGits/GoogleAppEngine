@@ -1,0 +1,80 @@
+{{define "getTaskByUser"}}
+
+<html>
+<head>
+ {{template "header"}}
+</head>
+<body>
+      {{template "masthead" .}}
+
+	<div id="marginWrapper" >  <!-- style="margin: 0 3.5em 0 3.5em" -->
+	   
+	
+
+        <div class="ui vertical stripe segment" >
+         <div class="ui middle aligned stackable grid container" style = "background-color: #FFFFFF;" >
+
+         		<div id="navbar" class="ui compact menu item seven inverted stackable">
+            	<a class="item" href="/taskmanager/all">ALL</a>
+            	<a class="item" href="/taskmanager/tasks">TASKS</a>
+              <a class="item" href="/taskmanager/notes">NOTES</a>
+              <a class="item" href="/taskmanager/get">GET</a>
+              <a class="item" href="/taskmanager/create">CREATE</a>
+              <a class="item" href="/taskmanager/update">UPDATE</a>
+              <a class="item" href="/taskmanager/delete">DELETE</a>                
+            </div>
+
+
+
+
+
+
+
+
+            <div class="row" >
+            	
+                <!--   {{template "controller"}} -->
+            		
+            		 <div class="ui text container" id="textContainerInRowOrigin">
+               		<div id="task">
+                      <form class="ui large form"  id="getTaskByUserForm">
+                   <div class="ui stacked segment" id="createForm">
+            <div class="ui large form segment" style="margin: 2em 3.5em 0 3.5em">
+             
+              <div  id="filed" class="field">
+                <label>Name</label>
+                <div class="ui left labeled icon input">
+                  <input placeholder="created by" type="text" name="name">
+                  
+                  <div class="ui corner label">
+                   
+                  </div>
+                </div>
+              </div>
+             
+             
+              <!--<div class="ui error message">
+                <div class="header">We noticed some issues</div>
+              </div>
+              -->
+               <input type="submit" class="ui button" value="Get tasks" style="margin-top:0.5em;" />
+             </div>
+             </div>
+            </form>
+                  </div>
+  					
+ 					       </div>
+            		
+        	</div>
+        </div>
+
+        </div>
+
+           
+    </div>
+
+
+
+</body>
+</html>
+  {{end}}

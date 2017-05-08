@@ -1,0 +1,102 @@
+{{define "delete"}}
+
+<html>
+<head>
+ {{template "header" }}
+</head>
+<body>
+      {{template "masthead" .}}
+
+  <div id="marginWrapper" >  <!-- style="margin: 0 3.5em 0 3.5em" -->
+     
+  
+
+        <div class="ui vertical stripe segment" >
+         <div class="ui middle aligned stackable grid container" style = "background-color: #FFFFFF;" >
+
+            <div id="navbar" class="ui compact menu item seven inverted stackable">
+              <a class="item" href="/taskmanager/all">ALL</a>
+              <a class="item" href="/taskmanager/tasks">TASKS</a>
+              <a class="item" href="/taskmanager/notes">NOTES</a>
+              <a class="item" href="/taskmanager/get">GET</a>
+              <a class="item" href="/taskmanager/create">CREATE</a>
+              <a class=" item" href="/taskmanager/update">UPDATE</a>
+              <a class=" active item" href="/taskmanager/delete">DELETE</a>                
+            </div>
+
+
+
+
+
+
+
+
+            <div class="row" >
+            	<div class=" colum" style="border-style: outset;border-width: 1px">
+            		<div class="ui vertical menu"  id="vertMenu" style="width: 20rem !important;">
+                 
+                  <div class="item">
+                    <h3 class="ui header">DELETE operations</h3><hr/>
+                    
+            					  
+                        <a class="item" onclick="deleteTaskByID()">
+                          <h6 class="ui header">Delete task</h6>
+                          <p>Visit our rebate forum for information on claiming rebates</p>
+                        </a>
+                         <a class="item" onclick="deleteNoteByID()" >
+                            <h6 class="ui header">Delete note</h6>
+                            <p>Visit our rebate forum for information on claiming rebates</p>
+                          </a>
+                   
+					        </div>
+                  <div class="item">
+                    <h3 class="ui header">Additional operations</h3><hr/>
+                    
+                       
+                         <a class="item" onclick="getTasks()">
+                        <h6 class="ui header">Get all tasks</h6>
+                         <p>Check out our new promotions</p>
+                        </a>
+                          <a class="item" onclick="getTaskNotes()">
+                          <h6 class="ui header">Get all notes</h6>
+                           <p>Check out our new promotions</p>
+                          </a>
+                           
+                   
+                  </div>
+
+
+                      
+                         
+                      
+
+
+            	  </div>
+              </div>
+            		
+            		
+            		 <div class="ui text container" id="textContainerInRow">
+               		 <div id="task">
+                    
+                  </div>
+                  </br></hr>
+                  <div id="notes">
+                    
+                  </div>
+            
+  					
+ 					       </div>
+            		
+        	</div>
+        </div>
+
+        </div>
+
+           
+    </div>
+
+
+
+</body>
+</html>
+  {{end}}

@@ -1,0 +1,83 @@
+{{define "createNotebook"}}
+<html>
+<head>
+ {{template "header"}}
+</head>
+<body>
+      {{template "masthead" .}}
+
+	<div id="marginWrapper" >  <!-- style="margin: 0 3.5em 0 3.5em" -->
+	   
+	
+
+        <div class="ui vertical stripe segment" >
+        	<div class="ui middle aligned stackable grid container" style = "background-color: #FFFFFF;" >
+
+         		
+
+
+
+
+
+
+
+	            <div class="row" >
+	            	
+		              <div id="navbar" class="ui compact menu item five inverted stackable">
+		              <a class="item" onclick="getUserNotebook()">NOTEBOOKS</a>
+		               <a class="item" onclick="getUserNotes()">NOTES</a>
+		              <a class="item" href="/taskmanager/tasks">INFO</a>
+		              <a class="item" href="/taskmanager/notes">SUPPORT</a>
+		              <a class="item" href="/taskmanager/notes">LOGOUT</a>
+		            
+		              </div>
+
+	                   {{template "controller"}}
+	            		
+		            		 <div class="ui text container" id="textContainerInRow">
+			               		<form class="ui large form"  id="createTaskForm" method="post">
+					  
+								<div class="ui large form segment" style="margin: 2em 3.5em 0 3.5em">
+									<div  id="filed" class="field">
+								 			<div id="innerInputField">
+										    	<label>Created By</label>
+										    	<div class="ui left labeled icon input">
+										      		<input type="text" value='{{.Email}}' readonly name="createdby" id="idName">
+										      	</div>
+									     	</div>
+									</div>
+									<div  id="filed" class="field">
+								    	<div id="innerInputField">
+									      <label>Name</label>
+									      <div class="ui left labeled icon input">
+									      	<input placeholder="name" type="text" name="name">
+								      	  </div>
+								      	</div>
+								    </div>
+								    <div  id="filed" class="field">
+								    	<div id="innerInputField">
+									    	<label>Description</label>
+										    <div class="ui left labeled icon input">
+										      <input placeholder="description" type="text" name="description">
+										    </div>
+										    <input type="submit" class="ui button" value="Create" style="margin-top:0.5em;" />
+									    </div>
+									</div>
+								  </div>
+								  </div>
+								</form>		                  
+		  					
+		 					</div>
+	            		
+	        	</div>
+        	</div>
+        </div>
+
+           
+    </div>
+
+
+
+</body>
+</html>
+{{end}}

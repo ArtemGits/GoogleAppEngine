@@ -1,0 +1,59 @@
+{{define "all"}}
+
+<html>
+<head>
+ {{template "header"}}
+</head>
+<body>
+      {{template "masthead" .}}
+
+	<div id="marginWrapper" >  <!-- style="margin: 0 3.5em 0 3.5em" -->
+	   
+	
+
+        <div class="ui vertical stripe segment" >
+         <div class="ui middle aligned stackable grid container" style = "background-color: #FFFFFF;" >
+
+         		
+
+
+
+
+
+
+
+            <div class="row" >
+            	
+              <div id="navbar" class="ui compact menu item five inverted stackable">
+              <a class="item" onclick="getUserNotebook()">NOTEBOOKS</a>
+               <a class="item" onclick="getUserNotes()">NOTES</a>
+              <a class="item" href="/taskmanager/tasks">INFO</a>
+              <a class="item" href="/taskmanager/notes">SUPPORT</a>
+              <a class="item" onclick="logout()">LOGOUT</a>
+            
+              </div>
+
+                  {{template "controller"}}
+            		
+            		 <div class="ui text container" id="textContainerInRow">
+               		
+                  
+                  <div id="notes">
+                    
+                  </div>
+  					
+ 					       </div>
+            		
+        	</div>
+        </div>
+
+        </div>
+
+           
+    </div>
+
+
+
+</body>
+</html>
+  {{end}}

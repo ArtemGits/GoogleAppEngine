@@ -1,0 +1,33 @@
+{{define "masthead"}}
+
+
+
+
+<script type="text/javascript">
+
+
+
+</script>
+
+  <div class="ui inverted segment" style="padding: 0em !important; margin: 0 1.7rem 0.3rem 1.7rem !important; background-color: #000000;">
+  <div class="ui inverted secondary pointing menu">
+    
+        <a class="item" href="/">HOME</a>
+        <a class="item" href="#">DOCUMENTATION</a>
+        <a class="item" href="#">CONTACT</a>
+
+    <div class="right item">
+   <div class="item" style="display:block;">
+   <div id="idName">User: {{ .FirstName}}</div>
+   </div>
+    <div class="item" style="display:block;"> 
+    <div id="idName">Email: {{ .Email }}</div>
+    </div>
+    
+    </div>
+
+  </div>
+</div>
+
+
+{{end}}

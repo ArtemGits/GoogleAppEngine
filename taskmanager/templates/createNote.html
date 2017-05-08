@@ -1,0 +1,121 @@
+{{define "createNote"}}
+<html>
+<head>
+ {{template "header"}}
+ <script src="http://cdn.ckeditor.com/4.6.2/standard-all/ckeditor.js"></script>
+ <link href="/static/css/sdk-inline.css" rel="stylesheet">
+</head>
+<body>
+      {{template "masthead" .}}
+
+	<div id="marginWrapper" >  <!-- style="margin: 0 3.5em 0 3.5em" -->
+	   
+	
+
+        <div class="ui vertical stripe segment" >
+        	<div class="ui middle aligned stackable grid container" style = "background-color: #FFFFFF;" >
+
+         		
+
+
+
+
+
+
+
+	            <div class="row" >
+	            	
+		              <div id="navbar" class="ui compact menu item five inverted stackable">
+		              <a class="item" onclick="getUserNotebook()">NOTEBOOKS</a>
+		              <a class="item" onclick="getUserNotes()">NOTES</a>
+		              <a class="item" href="/taskmanager/tasks">INFO</a>
+		              <a class="item" href="/taskmanager/notes">SUPPORT</a>
+		              <a class="item" href="/taskmanager/notes">LOGOUT</a>
+		            
+		              </div>
+
+	                   {{template "controller"}}
+	            		
+		            		 <div class="ui text container" id="textContainerInRow">
+			               		<form class="ui large form"  id="createNoteForm" method="post">
+					  
+								<div class="ui large form segment" style="margin: 2em 3.5em 0 3.5em">
+									
+									<div  id="filed" class="field">
+								    	<div id="innerInputField">
+									      <label>Name</label>
+									      <div class="ui left labeled icon input">
+									      	<input placeholder="name" type="text" name="name">
+								      	  </div>
+								      	</div>
+								    </div>
+								   <div  id="filed" class="field">
+								 			<div id="innerInputField">
+										    	<label>Created By</label>
+										    	<div class="ui left labeled icon input">
+										      		<input type="text" value='{{.Email}}' readonly name="createdby" id="idName">
+										      		<input type="hidden" id="notebookid" name="notebookid">
+										      	</div>
+									     	</div>
+									</div>
+								    <div  id="filed" class="field">
+								    	<div id="innerInputField">
+									    	<label>Description</label>
+										    <div class="ui left labeled icon input">
+										      <input placeholder="description" type="text" name="description">
+										    </div>
+									    </div>
+									</div>
+									
+								    	
+									    	<label>Content</label>
+										    <div class="ui left labeled icon input">
+										     <div id="introduction">
+												
+
+												<p>
+													<strong>Inline Editing</strong> allows you to edit any element on the page in-place. Inline editor provides a real <abbr title="What You See is What You Get">WYSIWYG</abbr> experience "out of the box", because unlike in <a href="http://sdk.ckeditor.com/samples/classic.html">classic editor</a>,
+													there is no <code>&lt;iframe&gt;</code> element surrounding the editing area. The CSS styles used for editor content are exactly the same as on the target page where this content is rendered!
+												</p>
+
+												
+											</div>
+
+										    </div>
+										   
+										    <input type="submit" class="ui button" value="Create" style="margin-top:0.5em;" />
+									   
+									
+								  </div>
+								  </div>
+								</form>		                  
+		  					
+		 					</div>
+	            		
+	        	</div>
+        	</div>
+        </div>
+
+           
+    </div>
+
+
+	<script>
+		// The inline editor should be enabled on an element with "contenteditable" attribute set to "true".
+		// Otherwise CKEditor will start in read-only mode.
+		var introduction = document.getElementById( 'introduction' );
+		introduction.setAttribute( 'contenteditable', true );
+
+		CKEDITOR.inline( 'introduction', {
+			// Allow some non-standard markup that we used in the introduction.
+			extraAllowedContent: 'a(documentation);abbr[title];code',
+			removePlugins: 'stylescombo',
+			extraPlugins: 'sourcedialog',
+			// Show toolbar on startup (optional).
+			startupFocus: true
+		} );
+	</script>
+
+</body>
+</html>
+{{end}}
