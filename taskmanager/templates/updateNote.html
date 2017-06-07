@@ -8,24 +8,17 @@
 <script src="http://cdn.ckeditor.com/4.6.2/standard-all/ckeditor.js"></script>
 <link href="/static/css/sdk-inline.css" rel="stylesheet">
 </head>
-<body>
+<body onload = "getIDForNotes()">
       {{template "masthead" .}}
 
-   <div id="marginWrapper" >  <!-- style="margin: 0 3.5em 0 3.5em" -->
+   <div id="marginWrapper" > 
      
   
 
         <div class="ui vertical stripe segment" >
           <div class="ui middle aligned stackable grid container" style = "background-color: #FFFFFF;" >
 
-            
-
-
-
-
-
-
-
+           
               <div class="row" >
                 
                   <div id="navbar" class="ui compact menu item five inverted stackable">
@@ -85,11 +78,6 @@
                         
                         </form>
             
-
-
-
-                  
-            
                  </div>
                 
           </div>
@@ -100,7 +88,6 @@
            
     </div>
 
-<script src="/static/js/updateNote.js"></script>
 
 </body>
 </html>

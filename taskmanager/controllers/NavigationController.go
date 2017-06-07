@@ -6,7 +6,7 @@ import (
 	"html/template"
 )
 
-var templates = template.Must(template.ParseGlob("templates/*"))
+var templates = template.Must(template.ParseGlob("/home/artem/Documents/code/go/src/GFW/taskmanager/templates/*"))
 var userLoginInfo interface{}
 
 
@@ -82,17 +82,8 @@ func UpdateNotePage(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-
-
-
-
-
-
-
 func storeUserLogin(resource interface{}) {
 	userLoginInfo = resource
-	//log.Println("User:")
-	//log.Println(userLoginInfo)
 }
 
 

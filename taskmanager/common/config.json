@@ -1,7 +1,7 @@
 {
 	"Server" 		: 	"0.0.0.0:8080",
-	"MongoDBHost"   :	"127.0.0.1",
+	"MongoDBHost"   :	"mongodb://ds113702.mlab.com:13702",
 	"MongoDBUser"	: 	"Artem",
-	"MongoDBPwd"	: 	"gits",
-	"Database"		: 	"taskdb"
+	"MongoDBPwd"	: 	"gits2017",
+	"Database"		: 	"notes_sentinel"
 }

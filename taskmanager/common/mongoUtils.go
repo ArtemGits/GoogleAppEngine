@@ -3,7 +3,7 @@ package common
 import (
 	"gopkg.in/mgo.v2"
 	
-	"time"
+	//"time"
 	"log"
 )
 
@@ -12,12 +12,15 @@ var session *mgo.Session
 func GetSession() *mgo.Session {
 	if session == nil {
 		var err error
-		session,err = mgo.DialWithInfo(&mgo.DialInfo{
-			Addrs: 		[]string{AppConfig.MongoDBHost},
-			Username: 	AppConfig.DBUser,
-			Password: 	AppConfig.DBPwd,
-			Timeout: 	60 * time.Second,
-			})
+
+	    session, err = mgo.Dial("mongodb://Artem:gits2017@ds113702.mlab.com:13702/notes_sentinel")
+
+		// session,err = mgo.DialWithInfo(&mgo.DialInfo{
+		// 	Addrs: 		[]string{AppConfig.MongoDBHost},
+		// 	Username: 	AppConfig.DBUser,
+		// 	Password: 	AppConfig.DBPwd,
+		// 	Timeout: 	60 * time.Second,
+		// 	})
 		if err != nil {
 			log.Fatalf("[GetSession]: %s\n", err)
 		}
@@ -28,15 +31,19 @@ func GetSession() *mgo.Session {
 
 func createDbSession() {
 	var err error
-	session,err = mgo.DialWithInfo(&mgo.DialInfo{
-			Addrs: 		[]string{AppConfig.MongoDBHost},
-			Username: 	AppConfig.DBUser,
-			Password: 	AppConfig.DBPwd,
-			Timeout: 	60 * time.Second,
-			})
+	// session,err = mgo.DialWithInfo(&mgo.DialInfo{
+	// 		Addrs: 		[]string{AppConfig.MongoDBHost},
+	// 		Username: 	AppConfig.DBUser,
+	// 		Password: 	AppConfig.DBPwd,
+	// 		Timeout: 	60 * time.Second,
+	// 		})
+	
+	session, err = mgo.Dial("mongodb://Artem:gits2017@ds113702.mlab.com:13702/notes_sentinel")
+
 		if err != nil {
 			log.Fatalf("[createDbSession]: %s\n", err)
 		}
+
 }
 
 
@@ -65,7 +72,7 @@ func addIndexes() {
 	defer session.Close()
 
 	userCol := session.DB(AppConfig.Database).C("users")
-	taskCol := session.DB(AppConfig.Database).C("tasks")
+	taskCol := session.DB(AppConfig.Database).C("notebooks")
 	noteCol := session.DB(AppConfig.Database).C("notes")
 	
 	err =  userCol.EnsureIndex(userIndex)

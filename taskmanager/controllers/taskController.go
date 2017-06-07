@@ -33,7 +33,7 @@ func CreateNotebooks(w http.ResponseWriter, r *http.Request) {
 	task:= &dataResource.Data
 	context := NewContext()
 	defer context.Close()
-	c := context.DbCollection("tasks")
+	c := context.DbCollection("notebooks")
 	repo := &data.NotebookRepository{c}
 
 	repo.Create(task)
@@ -57,7 +57,7 @@ func CreateNotebooks(w http.ResponseWriter, r *http.Request) {
 func GetNotebooks(w http.ResponseWriter, r *http.Request) {
 	context := NewContext()
 	defer context.Close()
-	c := context.DbCollection("tasks")
+	c := context.DbCollection("notebooks")
 	repo := &data.NotebookRepository{c}
 	tasks := repo.GetAll()
 	j, err := json.Marshal(NotebooksResource{Data: tasks})
@@ -83,7 +83,7 @@ func GetNotebookById(w http.ResponseWriter, r *http.Request) {
 	id := vars["id"]
 	context := NewContext()
 	defer context.Close()
-	c := context.DbCollection("tasks")
+	c := context.DbCollection("notebooks")
 	repo := &data.NotebookRepository{c}
 	task,err := repo.GetById(id)
 	if err != nil {
@@ -121,7 +121,7 @@ func GetNotebookByUser(w http.ResponseWriter, r *http.Request) {
 	user := vars["id"]
 	context := NewContext()
 	defer context.Close()
-	c := context.DbCollection("tasks")
+	c := context.DbCollection("notebooks")
 	repo := &data.NotebookRepository{c}
 	tasks := repo.GetByUser(user)
 	j,err := json.Marshal(NotebooksResource{Data: tasks})
@@ -164,7 +164,7 @@ func UpdateNotebook(w http.ResponseWriter, r *http.Request) {
 	log.Println("ID=",task.Id)
 	context := NewContext()
 	defer context.Close()
-	c := context.DbCollection("tasks")
+	c := context.DbCollection("notebooks")
 	repo := &data.NotebookRepository{c}
 
 	if err := repo.Update(task); err != nil {
@@ -186,7 +186,7 @@ func DeleteNotebook(w http.ResponseWriter, r *http.Request) {
 	id := vars["id"]
 	context := NewContext()
 	defer context.Close()
-	c := context.DbCollection("tasks")
+	c := context.DbCollection("notebooks")
 	repo := &data.NotebookRepository{c}
 	err := repo.Delete(id)
 	if err != nil {

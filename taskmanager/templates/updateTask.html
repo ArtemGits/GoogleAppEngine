@@ -7,23 +7,15 @@
  {{template "header" .}}
 
 </head>
-<body onload="iframe()">
+<body onload = "getID()">
       {{template "masthead" .}}
 
-  <div id="marginWrapper" >  <!-- style="margin: 0 3.5em 0 3.5em" -->
+  <div id="marginWrapper" >  
      
   
 
         <div class="ui vertical stripe segment" >
           <div class="ui middle aligned stackable grid container" style = "background-color: #FFFFFF;" >
-
-            
-
-
-
-
-
-
 
               <div class="row" >
                 
@@ -71,37 +63,15 @@
                               <input  type="text" name="status">
                              
                               <div class="ui corner label">
-                              <!--  <i class="icon asterisk"></i> -->
                               </div>
                             </div>
                           </div>
                          
-                         <!--  <div  id="filed" class="field">
-                            <label>Tags</label>
-                            <div class="ui left labeled icon input">
-                              <input type="text" name="tags">
-                              
-                              <div class="ui corner label">
-                               
-                              </div>
-                            </div>
-                          </div -->
-                          <!--<div class="ui error message">
-                            <div class="header">We noticed some issues</div>
-                          </div>
-                          -->
                            <input type="submit" class="ui button" value="Update" style="margin-top:0.5em;" />
                          </div>
                          
-                        </form>
-            
-
-
-
-                  
-            
+                        </form>       
                  </div>
-                
           </div>
         </div>
 
@@ -110,7 +80,6 @@
            
     </div>
 
-<script src="/static/js/updateTask.js"></script>
 
 </body>
 </html>

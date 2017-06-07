@@ -433,8 +433,9 @@ table#showsTable {
  #textContainerInRow {
   margin-left: auto !important;
   margin-right:auto !important;
+  margin-top: 3px !important;
   /*max-width: 100% !important;*/
-  height: 85% !important;
+  /*height: 85% !important;*/
   overflow: auto;
 
  }
@@ -496,6 +497,7 @@ table#showsTable {
     border-radius: 0px;
     background-color: black;
     color: white;
+    height: 20px;
 }
 
 

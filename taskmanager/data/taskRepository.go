@@ -20,6 +20,7 @@ func (r *NotebookRepository) Create(task *models.Notebook) error {
 	fmt.Println("In create")
 	task.Status = "Created"
 	err := r.C.Insert(&task)
+	fmt.Println(task)
 	return err
 }
 
